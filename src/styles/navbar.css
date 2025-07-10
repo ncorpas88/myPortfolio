@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  @apply bg-transparent
+   text-white px-4 py-3 
+   flex justify-between items-center shadow-md;
+}
+
+
+.navbar-links {
+  @apply flex flex-col gap-4;
+  margin-right: 80px;
+}
+
+.nav-button {
+  @apply flex items-center gap-5 border 
+  border-ubuntu-light text-white px-4 py-2 rounded-3xl
+   bg-ubuntu-light hover:bg-ubuntu-dark transition;
+}
+
+
+.logo {
+ margin-left: 80px;
+ margin-top: -40px;
+}
+

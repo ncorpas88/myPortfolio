@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.avatar {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 16rem;
+}
+
+.welcome-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.welcome {
+  background-color: rgb(174, 43, 226);
+  border-radius: 20px;
+  color: white;
+  font-family: "Changa One", sans-serif;
+  font-size: xx-large;
+  font-style: normal;
+  padding: 20px;
+}
+
+.img {
+  width: 20rem;
+  border-radius: 28px;
+}
+
+.intro {
+  color: rgb(189, 190, 190);
+  font-family: "Changa One", sans-serif;
+  font-size: xx-large;
+  font-style: normal;
+  margin: 50px;
+  margin-left: 80px;
+  margin-right: 200px;
+}
+
+.description {
+  color: white;
+  font-family: "Changa One", sans-serif;
+  font-size: xx-large;
+  font-style: normal;
+  margin: 50px;
+  margin-left: 80px;
+  margin-right: 200px;
+  margin-bottom: 20rem;
+}
+
+.tech-card {
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8rem;
+  backdrop-filter: blur(10px);
+}
+
+.tech-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "Changa One", sans-serif;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.tech-item {
+  background-color: #77216f;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.tech-item:hover {
+  transform: scale(1.05);
+  background-color: #5e2750;
+}
+
+
+@media (max-width:1000px) {
+    
+    .description {
+        font-size: larger;
+        margin-right: 200px;
+    }
+
+    .tech-card {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
