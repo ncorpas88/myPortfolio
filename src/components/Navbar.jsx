@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Home, User, FolderKanban, Mail } from "lucide-react";
+import { Home, FolderKanban, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "../styles/navbar.css";
 
 function Navbar() {
@@ -11,13 +12,21 @@ function Navbar() {
           <Home size={18} />
           Home
         </Link>
-         <Link to="/about" className="nav-button">
-          <User size={18} />
-          About me
-        </Link>
-        <Link to="/projects" className="nav-button">
+         <Link to="/projects" className="nav-button">
           <FolderKanban size={18} />
           Projects
+        </Link>
+         <Link to="https://github.com/ncorpas88" className="nav-button">
+          <FaGithub size={18} />
+          GitHub
+        </Link>
+        <Link to="natel1988@gmail.com" className="nav-button">
+          <Mail size={18} />
+          Mail
+        </Link>
+        <Link to="https://www.linkedin.com/in/ncorpas/" className="nav-button">
+          <FaLinkedin size={18} />
+          Linkedin
         </Link>
       </div>
     </nav>
