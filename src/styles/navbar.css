@@ -8,13 +8,10 @@
    flex justify-between items-center shadow-md;
 }
 
-
 .navbar-links {
   @apply flex flex-col md:flex-row gap-5;
   margin-right: 80px;
 }
-
-
 
 .nav-button {
   @apply flex justify-center gap-4 border 
@@ -22,14 +19,20 @@
    bg-ubuntu-light hover:bg-ubuntu-dark transition;
 }
 
-
 .logo {
- margin-left: 80px;
- margin-top: -50px;
+  width: 300px;
+  margin-left: 100px;
+  margin-top: -30px;
 }
 
-@media (max-width:1100px) {
-   .navbar-links{
-    @apply flex-col gap-4
-   }
+@media (max-width: 1100px) {
+  .navbar-links {
+    @apply flex-col gap-4;
+  }
+
+  .logo {
+    width: 200px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
 }
