@@ -31,6 +31,9 @@ function Home() {
           <span className="tech-item">Express</span>
           <span className="tech-item">MongoDB</span>
           <span className="tech-item">Mongoose</span>
+          <span className="tech-item">Cloudinary</span>
+          <span className="tech-item">Tailwind</span>
+          <span className="tech-item">Bootstap</span>
         </div>
       </div>
     </div>

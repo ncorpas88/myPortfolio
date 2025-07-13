@@ -23,6 +23,32 @@
   font-size: xx-large;
   font-style: normal;
   padding: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.welcome:hover {
+  transform: rotateY(8deg) rotateX(4deg) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.welcome {
+  animation: float 4s ease-in-out infinite;
 }
 
 .img {
