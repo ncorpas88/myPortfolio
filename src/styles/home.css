@@ -105,7 +105,7 @@
 }
 
 .tech-item {
-  background-color: #7164e9;
+  background-color: #895fe9;
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 500;
@@ -114,7 +114,7 @@
 
 .tech-item:hover {
   transform: scale(1.05);
-  background-color: #5e2750;
+  background-color: #460d7c;
 }
 
 

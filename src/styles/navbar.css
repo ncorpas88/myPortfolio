@@ -8,7 +8,6 @@
    flex justify-between items-center shadow-md;
 }
 
-
 .navbar-links {
   @apply flex flex-col md:flex-row gap-5;
   margin-right: 80px;
@@ -19,7 +18,6 @@
   border-purple-600 text-white px-4 py-2 rounded-3xl
   bg-purple-700 hover:bg-purple-900 transition;
 }
-
 
 .pyramid-loader {
   position: relative;
@@ -59,28 +57,28 @@
 
 .pyramid-loader .wrapper .side1 {
   transform: rotateZ(-30deg) rotateY(90deg);
-  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
 }
 
 .pyramid-loader .wrapper .side2 {
   transform: rotateZ(30deg) rotateY(90deg);
-  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
 }
 
 .pyramid-loader .wrapper .side3 {
   transform: rotateX(30deg);
-  background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
 }
 
 .pyramid-loader .wrapper .side4 {
   transform: rotateX(-30deg);
-  background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
 }
 
 .pyramid-loader .wrapper .shadow {
   width: 60px;
   height: 60px;
-  background: #8B5AD5;
+  background: #8b5ad5;
   position: absolute;
   top: 0;
   left: 0;
@@ -91,28 +89,22 @@
   filter: blur(12px);
 }
 
-
 .title {
   font-size: 60px;
   font-weight: bold;
   color: #ffffff;
-  text-shadow:
-    1px 1px 0 #ccc,
-    2px 2px 0 #bbb,
-    3px 3px 0 #aaa,
-    4px 4px 0 #999,
-    5px 5px 0 #888;
- 
+  text-shadow: 0 0 4px #1e90ff, 0 0 10px #00bfff, 0 0 20px #00bfff,
+    0 0 30px #0099ff, 0 0 40px #0077cc;
 }
 
 .title:hover {
   transform: rotateY(10deg) rotateX(5deg) scale(1.05);
   text-shadow:
-    2px 2px 2px #aaa,
-    4px 4px 4px #888,
-    6px 6px 6px #666,
-    8px 8px 8px #444,
-    10px 10px 10px #222;
+    2px 2px 2px #1e90ff,
+    4px 4px 4px #00bfff,
+    6px 6px 6px #0099ff,
+    8px 8px 8px #0077cc,
+    10px 10px 10px #0055aa;
 }
 
 @media (max-width: 1500px) {
@@ -129,7 +121,6 @@
 }
 
 @media (max-width: 700px) {
-
   .navbar-links {
     @apply flex-col gap-4;
   }
@@ -147,5 +138,4 @@
     margin-left: -65px;
     margin-right: 60px;
   }
-  
 }
