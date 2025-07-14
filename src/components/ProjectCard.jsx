@@ -22,7 +22,7 @@ function ProjectCard({ title, image, tools, description, link }) {
           target="_blank"
           rel="noopener noreferrer"
           className="card-link"
-        />
+        >Demo</a>
       </div>
     </div>
   );
