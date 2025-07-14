@@ -20,11 +20,6 @@
    bg-ubuntu-light hover:bg-ubuntu-dark transition;
 }
 
-.logo {
-  width: 300px;
-  margin-left: 100px;
-  margin-top: -30px;
-}
 
 .pyramid-loader {
   position: relative;
@@ -125,11 +120,32 @@
     @apply flex-col gap-4;
   }
 
-  .logo {
+  .pyramid-loader {
     width: 200px;
+    height: 200px;
     margin-left: 10px;
     margin-top: 30px;
   }
 }
 
+@media (max-width: 700px) {
 
+  .navbar-links {
+    @apply flex-col gap-4;
+  }
+
+  .wrapper {
+    width: 80px;
+    height: 80px;
+    margin-left: 50px;
+    margin-right: -30px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-top: 150px;
+    margin-left: -65px;
+    margin-right: 60px;
+  }
+  
+}
