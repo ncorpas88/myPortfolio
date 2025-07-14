@@ -16,7 +16,7 @@ function Navbar() {
         </div>
       </div>
       <div className="title">
-          <h1>My Portfolio</h1>
+          <h1>Natanael Corpas Rivero</h1>
         </div>
       <div className="navbar-links">
         <Link to="/" className="nav-button">

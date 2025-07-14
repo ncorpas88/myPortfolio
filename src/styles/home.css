@@ -16,7 +16,7 @@
 }
 
 .welcome {
-  background-color: rgb(174, 43, 226);
+  
   border-radius: 20px;
   color: white;
   font-family: "Changa One", sans-serif;
@@ -105,7 +105,7 @@
 }
 
 .tech-item {
-  background-color: #77216f;
+  background-color: #7164e9;
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 500;
@@ -142,5 +142,9 @@
         margin-right: 40px;
         margin-left: 40px;
     }
+  
+  .welcome {
+    font-size: large;
+  }
 }
 
