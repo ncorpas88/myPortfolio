@@ -1,13 +1,42 @@
 import "../styles/home.css";
+import { useEffect, useRef } from "react";
 
 function Home() {
+
+  const yomismoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (yomismoRef.current) {
+      observer.observe(yomismoRef.current);
+    }
+
+    return () => {
+      if (yomismoRef.current) {
+        observer.unobserve(yomismoRef.current);
+      }
+    };
+  }, []);
+
+
   return (
     <div className="home">
       <div className="welcome-cont">
         <h1 className="welcome">Welcome to my portfolio</h1>
       </div>
-      <div className="avatar">
-        <img className="img" src="images/avatar.png" alt="avatar" />
+      <div className="yomismo" ref={yomismoRef}>
+        <img src="images/yoo.png" alt="yo" />
       </div>
       <div className="intro">
         <h2>Hi, I'm Natanael Corpas Rivero</h2>
