@@ -1,10 +1,7 @@
 import "../styles/home.css";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 function Home() {
-
-  const yomismoRef = useRef(null);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -18,25 +15,40 @@ function Home() {
       { threshold: 0.3 }
     );
 
-    if (yomismoRef.current) {
-      observer.observe(yomismoRef.current);
-    }
+    const elementsToObserve = document.querySelectorAll(
+      ".yomismo, .intro, .description, .tech-card, .left-card, .right-card"
+    );
+
+    elementsToObserve.forEach((el) => observer.observe(el));
 
     return () => {
-      if (yomismoRef.current) {
-        observer.unobserve(yomismoRef.current);
-      }
+      elementsToObserve.forEach((el) => observer.unobserve(el));
     };
   }, []);
-
 
   return (
     <div className="home">
       <div className="welcome-cont">
         <h1 className="welcome">Welcome to my portfolio</h1>
       </div>
-      <div className="yomismo" ref={yomismoRef}>
-        <img src="images/yoo.png" alt="yo" />
+      <div className="yomismo-wrapper">
+        <div className="side-card left-card">
+          <img src="images/avatar.png" alt="avatar" className="avatar-img" />
+        </div>
+        <div className="yomismo">
+          <img src="images/yoo.png" alt="yo" />
+        </div>
+        <div className="side-card right-card">
+          <div className="sps-game">
+            <h3>Skills</h3>
+            <li>Autonomous learning</li>
+            <li>Analytical thinking</li>
+            <li>Initiative</li>
+            <li>Problem-solving</li>
+            <li> Effective  communication</li>
+            <li>Teamwork</li>
+          </div>
+        </div>
       </div>
       <div className="intro">
         <h2>Hi, I'm Natanael Corpas Rivero</h2>
@@ -50,7 +62,7 @@ function Home() {
         </h4>
       </div>
       <div className="tech-card">
-        <h3 className="tech-title">Technologies I Use:</h3>
+        <h3 className="tech-title">Tooling</h3>
         <div className="tech-list">
           <span className="tech-item">HTML</span>
           <span className="tech-item">CSS</span>
