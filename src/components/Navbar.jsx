@@ -31,10 +31,10 @@ function Navbar() {
           <FaGithub size={18} />
           GitHub
         </Link>
-        <Link to="natel1988@gmail.com" className="nav-button">
+        <a href="mailto:natel1988@gmail.com" className="nav-button">
           <Mail size={18} />
           Mail
-        </Link>
+        </a>
         <Link to="https://www.linkedin.com/in/ncorpas/" className="nav-button">
           <FaLinkedin size={18} />
           Linkedin
