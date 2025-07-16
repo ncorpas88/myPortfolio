@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .welcome-cont {
   display: flex;
   align-items: center;
@@ -11,9 +10,11 @@
 }
 
 .welcome {
-  
- border-radius: 20px;
-  font-family: "Changa One", sans-serif;
+  text-align: center;
+  border-radius: 20px;
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: xx-large;
   font-style: normal;
   padding: 20px;
@@ -39,7 +40,6 @@
   }
 }
 
-
 .welcome:hover {
   transform: rotateY(8deg) rotateX(4deg) scale(1.05);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
@@ -62,7 +62,11 @@
 }
 
 .yomismo {
-  background: linear-gradient(135deg, rgba(30, 30, 30, 0.85), rgba(60, 60, 60, 0.75));
+  background: linear-gradient(
+    135deg,
+    rgba(190, 190, 190, 0.85),
+    rgba(56, 106, 163, 0.75)
+  );
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-radius: 50%;
@@ -77,12 +81,11 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
 .yomismo img {
   max-width: 500px;
   max-height: 500px;
   object-fit: cover;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 
 .yomismo,
@@ -112,36 +115,29 @@
   padding: 0 6rem;
 }
 
-
-
-.side-card {
-  width: 220px;
-  max-width: 90vw; 
-  height: auto;
-  min-height: 230px;
-  background: rgba(40, 40, 60, 0.85);
-  border-radius: 16px;
-  padding: 1rem;
-  color: white;
-  text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(50px);
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  flex-shrink: 0;
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
-.side-card.visible {
-  transform: translateY(0);
-  opacity: 1;
+.sps-game h3 {
+  font-size: x-large;
 }
-
 
 .sps-game {
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  font-family: "Changa One", sans-serif;
+  font-family: "sans-serif";
   margin-top: 10px;
+  border-radius: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  padding-right: 20px;
 }
+
 
 .intro {
   color: rgb(189, 190, 190);
@@ -154,6 +150,7 @@
 }
 
 .description {
+  text-align: justify;
   color: white;
   font-family: "Changa One", sans-serif;
   font-size: xx-large;
@@ -166,7 +163,7 @@
 
 .tech-card {
   margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.055);
   border-radius: 16px;
   padding: 20px;
   text-align: center;
@@ -192,63 +189,82 @@
 }
 
 .tech-item {
-  background-color: #895fe9;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
   padding: 10px 20px;
   border-radius: 12px;
   font-weight: 500;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .tech-item:hover {
-  transform: scale(1.05);
-  background-color: #460d7c;
+  transform: scale(1.15);
+  background-color: #b1c5ee; /* Tailwind's gray-200 */
 }
 
 
+@media (max-width: 1000px) {
+  .description {
+    font-size: larger;
+    margin-right: 200px;
+  }
 
-
-@media (max-width:1000px) {
-    
-    .description {
-        font-size: larger;
-        margin-right: 200px;
-    }
-
-    .tech-card {
-        margin-left: 5rem;
-        margin-right: 5rem;
-    }
+  .tech-card {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 
 @media (max-width: 768px) {
-   .yomismo-wrapper {
-    padding: 0 1rem;
+  .yomismo-wrapper {
+    width: 400px;
+    padding: 0 0.8rem;
     flex-direction: column;
     gap: 1.5rem;
+    padding-right: 180px;
   }
 
   .side-card {
     width: 200px;
   }
 
+
+  .tech-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .tech-card {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    max-width: 700px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 8rem;
+    backdrop-filter: blur(10px);
+  }
 }
 
-@media (max-width:700px) {
-
-
+@media (max-width: 700px) {
   .description {
-        font-size: larger;
-        margin-right: 40px;
-        margin-left: 40px;
-    }
-  
+    font-size: larger;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+
   .welcome {
     font-size: xx-large;
   }
 }
 
-@media (max-width:450px) {
-
+@media (max-width: 450px) {
   .yomismo {
     width: 350px;
   }

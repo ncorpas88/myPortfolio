@@ -10,83 +10,34 @@
 
 .navbar-links {
   @apply flex flex-col md:flex-row gap-5;
-  margin-right: 80px;
+  margin-right: 150px;
+}
+
+.avatar {
+  width: 100%;
+  max-width: 300px;
+  margin: 40px auto 0;
+  background-color: aliceblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
 }
 
 .nav-button {
-  @apply flex justify-center gap-4 border 
-  border-purple-600 text-white px-4 py-2 rounded-3xl
-  bg-purple-700 hover:bg-purple-900 transition;
-}
-
-.pyramid-loader {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  display: block;
-  transform-style: preserve-3d;
-  transform: rotateX(-20deg);
-}
-
-.wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  animation: spin 4s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotateY(360deg);
-  }
-}
-
-.pyramid-loader .wrapper .side {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  transform-origin: center top;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
-
-.pyramid-loader .wrapper .side1 {
-  transform: rotateZ(-30deg) rotateY(90deg);
-  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
-}
-
-.pyramid-loader .wrapper .side2 {
-  transform: rotateZ(30deg) rotateY(90deg);
-  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
-}
-
-.pyramid-loader .wrapper .side3 {
-  transform: rotateX(30deg);
-  background: conic-gradient(#2f2585, #d8cce6, #f028fd, #2bdeac);
-}
-
-.pyramid-loader .wrapper .side4 {
-  transform: rotateX(-30deg);
-  background: conic-gradient(#2bdeac, #f028fd, #d8cce6, #2f2585);
-}
-
-.pyramid-loader .wrapper .shadow {
-  width: 60px;
-  height: 60px;
-  background: #8b5ad5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  transform: rotateX(90deg) translateZ(-40px);
-  filter: blur(12px);
+  @apply flex justify-center gap-4 
+  border border-black 
+  text-black bg-white 
+  px-4 py-2 rounded-3xl 
+  hover:bg-blue-200 
+  hover:-translate-y-1 
+  transition-transform duration-200 ease-in-out;
 }
 
 .title {
@@ -97,49 +48,21 @@
     0 0 30px #0099ff, 0 0 40px #0077cc;
 }
 
-.title:hover {
-  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-  text-shadow:
-    2px 2px 2px #1e90ff,
-    4px 4px 4px #00bfff,
-    6px 6px 6px #0099ff,
-    8px 8px 8px #0077cc,
-    10px 10px 10px #0055aa;
-}
-
 @media (max-width: 1500px) {
   .navbar-links {
     @apply flex-col gap-4;
-  }
-
-  .pyramid-loader {
-    width: 200px;
-    height: 200px;
-    margin-left: 10px;
-    margin-top: 30px;
   }
 }
 
 @media (max-width: 700px) {
   .navbar-links {
     @apply flex-col gap-4;
+    margin-right: 30px;
+    margin-left: 20px;
   }
 
-  .wrapper {
-    width: 80px;
-    height: 80px;
-    margin-left: 60px;
-    margin-right: -20px;
-  }
-
-  .title {
-    font-size: 24px;
-    margin-top: 150px;
-    margin-left: -85px;
-    margin-right: 60px;
-  }
-
-  .pyramid-loader {
-    margin-left: 10px;
+  .avatar {
+    max-width: 200px;
+    margin: 20px auto;
   }
 }

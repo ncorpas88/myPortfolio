@@ -6,18 +6,9 @@ import "../styles/navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="pyramid-loader">
-        <div className="wrapper">
-          <span className="side side1"></span>
-          <span className="side side2"></span>
-          <span className="side side3"></span>
-          <span className="side side4"></span>
-          <span className="shadow"></span>
-        </div>
+      <div className="avatar">
+        <img src="images/avatar.png" alt="avatar" className="avatar-img" />
       </div>
-      <div className="title">
-          <h1>Natanael</h1>
-        </div>
       <div className="navbar-links">
         <Link to="/" className="nav-button">
           <Home size={18} />

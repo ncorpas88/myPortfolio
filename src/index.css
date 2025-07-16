@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-   background: linear-gradient(135deg, #000000, #333333, #666666);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000; /* o transparente si prefieres */
+  z-index: -1;
 }

@@ -29,25 +29,15 @@ function Home() {
   return (
     <div className="home">
       <div className="welcome-cont">
-        <h1 className="welcome">Welcome to my portfolio</h1>
+        <h1 className="welcome">
+          I´m Natanael
+          <br />
+          Welcome to my portfolio
+        </h1>
       </div>
       <div className="yomismo-wrapper">
-        <div className="side-card left-card">
-          <img src="images/avatar.png" alt="avatar" className="avatar-img" />
-        </div>
         <div className="yomismo">
           <img src="images/yoo.png" alt="yo" />
-        </div>
-        <div className="side-card right-card">
-          <div className="sps-game">
-            <h3>Skills</h3>
-            <li>Autonomous learning</li>
-            <li>Analytical thinking</li>
-            <li>Initiative</li>
-            <li>Problem-solving</li>
-            <li> Effective  communication</li>
-            <li>Teamwork</li>
-          </div>
         </div>
       </div>
       <div className="intro">
@@ -60,6 +50,19 @@ function Home() {
           creating efficient solutions from front-end interfaces to robust
           back-end systems.
         </h4>
+      </div>
+      <div className="card-container">
+        <div className="side-card">
+          <ul className="sps-game" style={{ listStyleType: "none", paddingLeft: 20 }}>
+            <h3>Skills</h3>
+            <li>Autonomous learning</li>
+            <li>Analytical thinking</li>
+            <li>Initiative</li>
+            <li>Problem-solving</li>
+            <li> Effective communication</li>
+            <li>Teamwork</li>
+          </ul>
+        </div>
       </div>
       <div className="tech-card">
         <h3 className="tech-title">Tooling</h3>
