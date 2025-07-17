@@ -147,6 +147,7 @@
   margin: 50px;
   margin-left: 80px;
   margin-right: 200px;
+  text-align: center;
 }
 
 .description {
@@ -229,6 +230,9 @@
     width: 200px;
   }
 
+  .intro {
+    margin-left: 20;
+  }
 
   .tech-list {
     display: grid;
