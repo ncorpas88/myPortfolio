@@ -15,7 +15,7 @@
 
 .avatar {
   width: 100%;
-  max-width: 300px;
+  max-width: 280px;
   margin: 40px auto 0;
   background-color: aliceblue;
   border-radius: 50%;
@@ -54,15 +54,18 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
   .navbar-links {
     @apply flex-col gap-4;
-    margin-right: 30px;
-    margin-left: 20px;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
+
+  .avatarcountainer
 
   .avatar {
     max-width: 200px;
-    margin: 20px auto;
+    
+
   }
 }

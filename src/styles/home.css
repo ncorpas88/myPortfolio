@@ -219,17 +219,36 @@
 
 @media (max-width: 768px) {
   .yomismo-wrapper {
-    width: 400px;
-    padding: 0 0.8rem;
+    width: 100%;          
+    max-width: 300px;      
+    margin: 0 auto;       
+    padding: 0 0.9rem;      
     flex-direction: column;
     gap: 1.5rem;
-    padding-right: 180px;
   }
 
+  .yomismo {
+    width: 100%;          
+    max-width: 280px;     
+  }
+
+  .yomismo img {
+    display: block;       
+    width: 100%;           
+    height: auto;         
+    max-width: 260px;     
+    margin: 0 auto;        
+    border-radius: 50%;   
+  }
   .side-card {
     width: 200px;
   }
 
+  .intro {
+    display: flex;
+    margin-right: 2px;
+    margin-left: 10px;
+  }
   
 
   .tech-list {
@@ -257,8 +276,8 @@
 @media (max-width: 700px) {
   .description {
     font-size: larger;
-    margin-right: 40px;
-    margin-left: 40px;
+    margin-right: 3rem;
+    margin-left: 3rem;
   }
 
   .welcome {

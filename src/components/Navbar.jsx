@@ -6,8 +6,10 @@ import "../styles/navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="avatar">
-        <img src="images/avatar.png" alt="avatar" className="avatar-img" />
+      <div className="avatarcountainer">
+        <div className="avatar">
+          <img src="images/avatar.png" alt="avatar" className="avatar-img" />
+        </div>
       </div>
       <div className="navbar-links">
         <Link to="/" className="nav-button">
