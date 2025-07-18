@@ -54,12 +54,12 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.75rem;
-  color: white;
+  color: rgb(2, 2, 2);
   margin-bottom: 0.5rem;
 }
 
 .project-card-tool-item {
-  background-color: #c13bf6;
+  background-color: #95bef3;
   padding: 0.25rem 0.5rem;
   border-radius: 0.35rem;
 }
@@ -86,7 +86,7 @@
 .card-link {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #6f00ff;
+  background-color: #008cff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -94,7 +94,7 @@
 }
 
 .card-link:hover {
-  background-color: #6b00b3;
+  background-color: #0300b3;
 }
 
 @media (min-width: 600px) {
