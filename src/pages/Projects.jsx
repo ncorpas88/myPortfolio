@@ -17,7 +17,7 @@ import "../styles/projectCard.css"
       link: "https://bikestore-app.netlify.app/"
     },
     {
-      title: "Cathc de donut",
+      title: "Catch de donut",
       image: "donut.png",
       tools: ["HTML", "CSS", "Javascript", "DOM Manipulation"],
       description: "After a nuclear explosion in Springfield, only the donuts are safe. Help Homer collect them, avoid the radioactive cherries and broccoli to keep from losing points, and take down the ghost of Mr. Burns by shooting him with Duff beers—before he gets you first.",
