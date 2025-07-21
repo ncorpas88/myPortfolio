@@ -1,4 +1,18 @@
+.project-card-wrapper {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
+
+.project-card-wrapper.active {
+  transform: scale(1.05) rotateY(10deg);
+  opacity: 1;
+  z-index: 2;
+}
+
+.project-card-wrapper.dimmed {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
 .project-card {
   background-color: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
@@ -8,12 +22,13 @@
   overflow: hidden;
   max-width: 100%;
   margin: 1.5rem auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
 
-.project-card:hover {
-  transform: translateY(-4px);
-}
+
+
 
 .project-card img {
   width: 100%;

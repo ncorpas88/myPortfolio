@@ -1,5 +1,6 @@
 import ProjectCard from "../components/ProjectCard"
 import "../styles/projectCard.css"
+import { useState } from "react";
 
  const projects = [
     {
@@ -27,18 +28,27 @@ import "../styles/projectCard.css"
 
 function Projects() {
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
     <div className="project-list">
       {projects.map((project, i) => (
-        <ProjectCard
-        key={i}
-        title={project.title}
-        image={project.image}
-        tools={project.tools}
-        description={project.description}
-        link={project.link}
-        />
+        <div
+          key={i}
+          onMouseEnter={() => setHoveredIndex(i)}
+          onMouseLeave={() => setHoveredIndex(null)}
+          className={`project-card-wrapper ${
+            hoveredIndex !== null ? (hoveredIndex === i ? 'active' : 'dimmed') : ''
+          }`}
+        >
+          <ProjectCard
+            title={project.title}
+            image={project.image}
+            tools={project.tools}
+            description={project.description}
+            link={project.link}
+          />
+        </div>
       ))}
     </div>
   );
