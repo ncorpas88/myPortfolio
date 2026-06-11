@@ -237,3 +237,90 @@
     text-align: center;
   }
 }
+
+/* ── 3D Cylinder Carousel ── */
+.cylinder-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 3rem 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.cylinder-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cylinder-label {
+  font-family: "Changa One", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #60b4ff;
+  margin-bottom: 2rem;
+}
+
+.cylinder-stage {
+  perspective: 1100px;
+  perspective-origin: 50% 45%;
+  height: 260px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cylinder-track {
+  position: relative;
+  width: 210px;
+  height: 155px;
+  transform-style: preserve-3d;
+  animation: cylinder-spin 16s linear infinite;
+}
+
+.cylinder-track:hover {
+  animation-play-state: paused;
+}
+
+.cylinder-item {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(calc(var(--i) * 90deg)) translateZ(290px);
+}
+
+.cylinder-item img {
+  width: 210px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(0, 140, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: block;
+  transition: box-shadow 0.3s ease;
+}
+
+.cylinder-item img:hover {
+  box-shadow:
+    0 12px 40px rgba(0, 140, 255, 0.35),
+    0 0 0 2px rgba(0, 140, 255, 0.4);
+}
+
+@keyframes cylinder-spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+.cylinder-hint {
+  margin-top: 1.5rem;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
