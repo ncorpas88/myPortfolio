@@ -23,6 +23,13 @@ import { useState } from "react";
       tools: ["HTML", "CSS", "Javascript", "DOM Manipulation"],
       description: "After a nuclear explosion in Springfield, only the donuts are safe. Help Homer collect them, avoid the radioactive cherries and broccoli to keep from losing points, and take down the ghost of Mr. Burns by shooting him with Duff beers—before he gets you first.",
       link: "https://ncorpas88.github.io/Game-Hunger-Homer/"
+    },
+    {
+      title: "Sicarú",
+      image: "sicaruscreen.png",
+      tools: ["HTML", "CSS", "Javascript", "React", "Bootstrap", "Cloudinary", "Express", "Node", "MongoDB", "Mongoose"],
+      description: "Sicarú is an e-commerce platform for traditional Mexican huipiles, where artisans can showcase and sell their handcrafted garments, connecting indigenous textile culture with modern online shopping.",
+      link: "https://huipiles-client.vercel.app/"
     }
   ]
 
