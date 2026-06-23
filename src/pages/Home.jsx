@@ -15,6 +15,19 @@ function Home() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+
+            if (entry.target.classList.contains("yomismo-flip")) {
+              entry.target.classList.add("spin-once");
+              const inner = entry.target.querySelector(".yomismo-inner");
+              if (inner) {
+                inner.addEventListener(
+                  "animationend",
+                  () => entry.target.classList.remove("spin-once"),
+                  { once: true }
+                );
+              }
+            }
+
             observer.unobserve(entry.target);
           }
         });
@@ -23,7 +36,7 @@ function Home() {
     );
 
     const els = document.querySelectorAll(
-      ".yomismo, .intro, .description, .tech-card, .left-card, .right-card, .side-card, .cylinder-section"
+      ".yomismo-flip, .intro, .description, .tech-card, .left-card, .right-card, .side-card, .cylinder-section"
     );
     els.forEach((el) => observer.observe(el));
     return () => els.forEach((el) => observer.unobserve(el));
@@ -40,8 +53,15 @@ function Home() {
       </div>
 
       <div className="yomismo-wrapper">
-        <div className="yomismo">
-          <img src="images/yoo.png" alt="yo" />
+        <div className="yomismo-flip">
+          <div className="yomismo-inner">
+            <div className="yomismo-front">
+              <img src="images/yoo.png" alt="Natanael" />
+            </div>
+            <div className="yomismo-back">
+              <img src="images/avatar.png" alt="Avatar" />
+            </div>
+          </div>
         </div>
       </div>
 

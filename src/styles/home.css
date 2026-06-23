@@ -50,44 +50,87 @@
   margin: 1.5rem auto 0;
 }
 
-.yomismo {
-  background: linear-gradient(
-    135deg,
-    rgba(190, 190, 190, 0.85),
-    rgba(56, 106, 163, 0.75)
-  );
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border-radius: 50%;
+/* Flip card container */
+.yomismo-flip {
+  perspective: 900px;
   width: clamp(200px, 45vw, 320px);
   aspect-ratio: 1 / 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    0 0 0 4px rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.yomismo-flip.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.yomismo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.4, 0.2, 0.2, 1);
+  border-radius: 50%;
+}
+
+/* Hover: flip to avatar */
+.yomismo-flip:not(.spin-once):hover .yomismo-inner {
+  transform: rotateY(180deg);
+}
+
+/* Scroll-reveal: full 360° spin (muestra el avatar a mitad) */
+.yomismo-flip.spin-once .yomismo-inner {
+  animation: spin-reveal 1.6s cubic-bezier(0.4, 0.2, 0.2, 1) forwards;
+}
+
+@keyframes spin-reveal {
+  0%   { transform: rotateY(0deg); }
+  50%  { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.yomismo-front,
+.yomismo-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-.yomismo:hover {
+  background: linear-gradient(135deg, rgba(190, 190, 190, 0.85), rgba(56, 106, 163, 0.75));
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow:
-    0 12px 48px rgba(0, 140, 255, 0.25),
-    0 0 0 4px rgba(0, 140, 255, 0.2);
-  transform: scale(1.03);
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 0 0 4px rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.4s ease;
 }
 
-.yomismo img {
+.yomismo-flip:hover .yomismo-front,
+.yomismo-flip:hover .yomismo-back {
+  box-shadow:
+    0 12px 48px rgba(0, 140, 255, 0.3),
+    0 0 0 4px rgba(0, 140, 255, 0.25);
+}
+
+.yomismo-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, rgba(56, 106, 163, 0.85), rgba(100, 50, 180, 0.75));
+}
+
+.yomismo-front img,
+.yomismo-back img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  display: block;
 }
 
-/* ── Scroll-reveal (entrada) ── */
-.yomismo,
+/* ── Scroll-reveal (resto de elementos) ── */
 .intro,
 .description,
 .tech-card,
@@ -97,7 +140,6 @@
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-.yomismo.visible,
 .intro.visible,
 .description.visible,
 .tech-card.visible,
