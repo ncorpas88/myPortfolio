@@ -99,7 +99,7 @@ function Home() {
 
       <div className="card-container">
         <div className="side-card">
-          <ul className="sps-game" style={{ listStyleType: "none", paddingLeft: 0 }}>
+          <ul className="sps-game">
             <h3>Skills</h3>
             <li>Autonomous learning</li>
             <li>Analytical thinking</li>

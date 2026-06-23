@@ -184,6 +184,7 @@
 .side-card {
   width: 100%;
   max-width: 480px;
+  margin: 0 auto;
 }
 
 .sps-game {
@@ -196,6 +197,9 @@
   text-align: center;
   backdrop-filter: blur(10px);
   list-style: none;
+  /* reset browser ul defaults */
+  margin: 0;
+  padding-left: 0;
 }
 
 .sps-game h3 {
@@ -204,13 +208,18 @@
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
   color: #60b4ff;
+  padding: 0;
 }
 
 .sps-game li {
   padding: 0.3rem 0;
+  margin: 0;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  list-style: none;
+  width: 100%;
+  text-align: center;
 }
 
 .sps-game li:last-child {
