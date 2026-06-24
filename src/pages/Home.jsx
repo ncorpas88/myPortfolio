@@ -111,7 +111,7 @@ function Home() {
     );
 
     const els = document.querySelectorAll(
-      ".yomismo-flip, .intro, .description, .stats-row, .tech-card, .side-card, .cylinder-section"
+      ".yomismo-flip, .intro, .description, .stats-row, .skills-tooling-row, .cylinder-section"
     );
     els.forEach((el) => observer.observe(el));
     return () => els.forEach((el) => observer.unobserve(el));
@@ -171,7 +171,7 @@ function Home() {
         <p className="cylinder-hint">Hover to pause · See all in Projects</p>
       </div>
 
-      <div className="card-container">
+      <div className="skills-tooling-row">
         <div className="side-card">
           <div className="sps-game">
             <h3>Skills</h3>
@@ -188,27 +188,27 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="tech-card">
-        <h3 className="tech-title">Tooling</h3>
-        <div className="tech-list">
-          <span className="tech-item">HTML</span>
-          <span className="tech-item">CSS</span>
-          <span className="tech-item">JavaScript</span>
-          <span className="tech-item">React</span>
-          <span className="tech-item">Node.js</span>
-          <span className="tech-item">Express</span>
-          <span className="tech-item">MongoDB</span>
-          <span className="tech-item">Mongoose</span>
-          <span className="tech-item">Cloudinary</span>
-          <span className="tech-item">Tailwind</span>
-          <span className="tech-item">Bootstrap</span>
-          <span className="tech-item">Linux / Ubuntu</span>
-          <span className="tech-item">Bash</span>
-          <span className="tech-item">SSH</span>
-          <span className="tech-item">Grafana</span>
-          <span className="tech-item">Git</span>
+        <div className="tech-card">
+          <h3 className="tech-title">Tooling</h3>
+          <div className="tech-list">
+            <span className="tech-item">HTML</span>
+            <span className="tech-item">CSS</span>
+            <span className="tech-item">JavaScript</span>
+            <span className="tech-item">React</span>
+            <span className="tech-item">Node.js</span>
+            <span className="tech-item">Express</span>
+            <span className="tech-item">MongoDB</span>
+            <span className="tech-item">Mongoose</span>
+            <span className="tech-item">Cloudinary</span>
+            <span className="tech-item">Tailwind</span>
+            <span className="tech-item">Bootstrap</span>
+            <span className="tech-item">Linux / Ubuntu</span>
+            <span className="tech-item">Bash</span>
+            <span className="tech-item">SSH</span>
+            <span className="tech-item">Grafana</span>
+            <span className="tech-item">Git</span>
+          </div>
         </div>
       </div>
     </div>
