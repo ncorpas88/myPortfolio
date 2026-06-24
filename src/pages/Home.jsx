@@ -193,9 +193,11 @@ function Home() {
       <div className="description">
         <h4>
           I'm a Full Stack Web Developer with experience in building dynamic,
-          responsive applications using modern technologies. Passionate about
-          creating efficient solutions from front-end interfaces to robust
-          back-end systems.
+          responsive applications using modern technologies. I also work as an
+          OTT platform technician, managing Linux servers, automating tasks with
+          Bash scripting and Crontab, and monitoring production systems with
+          Grafana. Passionate about creating efficient solutions from front-end
+          interfaces to robust back-end and infrastructure.
         </h4>
       </div>
 
