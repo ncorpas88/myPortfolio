@@ -108,6 +108,9 @@ function Home() {
               <span className="skill-item">Problem-solving</span>
               <span className="skill-item">Effective communication</span>
               <span className="skill-item">Teamwork</span>
+              <span className="skill-item">Server administration</span>
+              <span className="skill-item">System monitoring</span>
+              <span className="skill-item">Incident response</span>
             </div>
           </div>
         </div>
@@ -127,6 +130,12 @@ function Home() {
           <span className="tech-item">Cloudinary</span>
           <span className="tech-item">Tailwind</span>
           <span className="tech-item">Bootstrap</span>
+          <span className="tech-item">Linux / Ubuntu</span>
+          <span className="tech-item">Bash</span>
+          <span className="tech-item">SSH</span>
+          <span className="tech-item">Grafana</span>
+          <span className="tech-item">Prometheus</span>
+          <span className="tech-item">Git</span>
         </div>
       </div>
     </div>
