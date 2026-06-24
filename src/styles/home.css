@@ -233,6 +233,99 @@
   line-height: 1.6;
 }
 
+/* ── Certifications ── */
+.certs-section {
+  margin: 0 0 2.5rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.certs-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.certs-title {
+  font-family: "Changa One", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #60b4ff;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 1.1rem;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .certs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .certs-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.cert-card {
+  background: var(--cert-bg);
+  border: 1px solid var(--cert-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cert-issuer {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cert-color);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--cert-border);
+}
+
+.cert-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cert-items li {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.35;
+  padding-left: 0.7rem;
+  position: relative;
+}
+
+.cert-items li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--cert-color);
+  font-size: 0.6rem;
+  top: 1px;
+}
+
 /* ── Skills + Tooling lado a lado ── */
 .skills-tooling-row {
   display: flex;

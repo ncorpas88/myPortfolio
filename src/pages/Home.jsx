@@ -75,6 +75,56 @@ function Counter({ target, suffix, label }) {
   );
 }
 
+/* ── Certifications data ── */
+const certifications = [
+  {
+    issuer: "AWS",
+    color: "#ff9900",
+    bg: "rgba(255,153,0,0.1)",
+    border: "rgba(255,153,0,0.35)",
+    items: ["Introduction to Amazon EC2", "Introduction to Amazon VPC"],
+  },
+  {
+    issuer: "Google",
+    color: "#4285f4",
+    bg: "rgba(66,133,244,0.1)",
+    border: "rgba(66,133,244,0.35)",
+    items: [
+      "Fundamentos de la ciberseguridad",
+      "Detección y respuesta",
+      "Activos, amenazas y vulnerabilidades",
+      "Linux y SQL",
+      "Redes y seguridad de redes",
+      "Gestión de riesgos de seguridad",
+    ],
+  },
+  {
+    issuer: "Ironhack",
+    color: "#e11d48",
+    bg: "rgba(225,29,72,0.1)",
+    border: "rgba(225,29,72,0.35)",
+    items: ["Full Stack Web Developer"],
+  },
+  {
+    issuer: "IBM",
+    color: "#0062ff",
+    bg: "rgba(0,98,255,0.1)",
+    border: "rgba(0,98,255,0.35)",
+    items: [
+      "IBM Certified Application Developer",
+      "Web Development with Python",
+      "Python Certificate",
+    ],
+  },
+  {
+    issuer: "Keepcoding",
+    color: "#7c3aed",
+    bg: "rgba(124,58,237,0.1)",
+    border: "rgba(124,58,237,0.35)",
+    items: ["Fundamentos de Python"],
+  },
+];
+
 /* ── Carousel items ── */
 const carouselItems = [
   { src: "rideo.png",        alt: "Rideo" },
@@ -111,7 +161,7 @@ function Home() {
     );
 
     const els = document.querySelectorAll(
-      ".yomismo-flip, .intro, .description, .stats-row, .skills-tooling-row, .cylinder-section"
+      ".yomismo-flip, .intro, .description, .stats-row, .skills-tooling-row, .cylinder-section, .certs-section"
     );
     els.forEach((el) => observer.observe(el));
     return () => els.forEach((el) => observer.unobserve(el));
@@ -153,7 +203,7 @@ function Home() {
       <div className="stats-row">
         <Counter target={4}  suffix=""  label="Projects" />
         <Counter target={2}  suffix="+" label="Years coding" />
-        <Counter target={16} suffix="+" label="Technologies" />
+        <Counter target={20} suffix="+" label="Technologies" />
       </div>
 
       {/* 3D cylinder carousel */}
@@ -171,6 +221,31 @@ function Home() {
         <p className="cylinder-hint">Hover to pause · See all in Projects</p>
       </div>
 
+      {/* Certifications */}
+      <div className="certs-section">
+        <h3 className="certs-title">Certifications</h3>
+        <div className="certs-grid">
+          {certifications.map((group) => (
+            <div
+              key={group.issuer}
+              className="cert-card"
+              style={{
+                "--cert-color": group.color,
+                "--cert-bg": group.bg,
+                "--cert-border": group.border,
+              }}
+            >
+              <span className="cert-issuer">{group.issuer}</span>
+              <ul className="cert-items">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="skills-tooling-row">
         <div className="side-card">
           <div className="sps-game">
@@ -185,6 +260,9 @@ function Home() {
               <span className="skill-item">Server administration</span>
               <span className="skill-item">System monitoring</span>
               <span className="skill-item">Incident response</span>
+              <span className="skill-item">Network security</span>
+              <span className="skill-item">Risk management</span>
+              <span className="skill-item">Threat detection</span>
             </div>
           </div>
         </div>
@@ -204,10 +282,14 @@ function Home() {
             <span className="tech-item">Tailwind</span>
             <span className="tech-item">Bootstrap</span>
             <span className="tech-item">Linux / Ubuntu</span>
-            <span className="tech-item">Bash</span>
+            <span className="tech-item">Bash scripting</span>
+            <span className="tech-item">Crontab</span>
             <span className="tech-item">SSH</span>
             <span className="tech-item">Grafana</span>
             <span className="tech-item">Git</span>
+            <span className="tech-item">AWS EC2</span>
+            <span className="tech-item">AWS VPC</span>
+            <span className="tech-item">SQL</span>
           </div>
         </div>
       </div>
