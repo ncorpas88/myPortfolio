@@ -134,7 +134,6 @@ function Home() {
           <span className="tech-item">Bash</span>
           <span className="tech-item">SSH</span>
           <span className="tech-item">Grafana</span>
-          <span className="tech-item">Prometheus</span>
           <span className="tech-item">Git</span>
         </div>
       </div>
