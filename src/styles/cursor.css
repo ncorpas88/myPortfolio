@@ -1,0 +1,53 @@
+/* Solo en dispositivos con cursor fino (ratón), no en touch */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+
+  .cursor-dot {
+    position: fixed;
+    top: -4px;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background: #60b4ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99999;
+    will-change: transform;
+    mix-blend-mode: screen;
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, top 0.2s ease, left 0.2s ease;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    top: -18px;
+    left: -18px;
+    width: 36px;
+    height: 36px;
+    border: 1.5px solid rgba(96, 180, 255, 0.55);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 99998;
+    will-change: transform;
+    transition: width 0.3s ease, height 0.3s ease,
+      top 0.3s ease, left 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Estado hover sobre elementos clicables */
+  .cursor-dot.is-hover {
+    width: 12px;
+    height: 12px;
+    top: -6px;
+    left: -6px;
+    background: #a78bfa;
+  }
+
+  .cursor-ring.is-hover {
+    width: 52px;
+    height: 52px;
+    top: -26px;
+    left: -26px;
+    border-color: rgba(167, 139, 250, 0.5);
+  }
+}

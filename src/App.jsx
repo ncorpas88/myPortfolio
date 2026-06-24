@@ -2,9 +2,11 @@ import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import CustomCursor from "./components/CustomCursor";
 import { useEffect } from "react";
 
 function App() {
+  /* Particles */
   useEffect(() => {
     if (window.particlesJS) {
       window.particlesJS("particles-js", {
@@ -43,14 +45,44 @@ function App() {
     }
   }, []);
 
+  /* Mouse parallax sobre las capas aurora */
+  useEffect(() => {
+    const layers = document.querySelectorAll(".aurora-layer");
+    const handle = (e) => {
+      const cx = e.clientX / window.innerWidth - 0.5;
+      const cy = e.clientY / window.innerHeight - 0.5;
+      layers.forEach((layer) => {
+        const depth = parseFloat(layer.dataset.depth);
+        layer.style.transform = `translate(${cx * depth * 32}px, ${cy * depth * 32}px)`;
+      });
+    };
+    window.addEventListener("mousemove", handle, { passive: true });
+    return () => window.removeEventListener("mousemove", handle);
+  }, []);
+
   return (
     <>
+      <CustomCursor />
+
+      {/* Grain overlay */}
+      <div className="noise-overlay" aria-hidden="true" />
+
+      {/* Aurora fondo */}
       <div className="bg-aurora" aria-hidden="true">
-        <span className="aurora-blob aurora-1" />
-        <span className="aurora-blob aurora-2" />
-        <span className="aurora-blob aurora-3" />
-        <span className="aurora-blob aurora-4" />
+        <div className="aurora-layer" data-depth="1">
+          <span className="aurora-blob aurora-1" />
+        </div>
+        <div className="aurora-layer" data-depth="0.6">
+          <span className="aurora-blob aurora-2" />
+        </div>
+        <div className="aurora-layer" data-depth="0.35">
+          <span className="aurora-blob aurora-3" />
+        </div>
+        <div className="aurora-layer" data-depth="0.8">
+          <span className="aurora-blob aurora-4" />
+        </div>
       </div>
+
       <Navbar />
       <main>
         <Routes>

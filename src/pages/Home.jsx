@@ -1,6 +1,81 @@
 import "../styles/home.css";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
+/* ── Typewriter ── */
+const LINES = ["I´m Natanael", "Welcome to my portfolio"];
+
+function TypewriterTitle() {
+  const [line1, setLine1] = useState("");
+  const [line2, setLine2] = useState("");
+  const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    if (phase === 0) {
+      if (line1.length < LINES[0].length) {
+        const t = setTimeout(() => setLine1(LINES[0].slice(0, line1.length + 1)), 70);
+        return () => clearTimeout(t);
+      }
+      const t = setTimeout(() => setPhase(1), 380);
+      return () => clearTimeout(t);
+    }
+    if (phase === 1) {
+      if (line2.length < LINES[1].length) {
+        const t = setTimeout(() => setLine2(LINES[1].slice(0, line2.length + 1)), 55);
+        return () => clearTimeout(t);
+      }
+      setPhase(2);
+    }
+  }, [line1, line2, phase]);
+
+  return (
+    <h1 className="welcome">
+      <span>{line1}</span>
+      {line1.length === LINES[0].length && (
+        <>
+          <br />
+          <span>{line2}</span>
+        </>
+      )}
+      {phase < 2 && <span className="tw-cursor">|</span>}
+    </h1>
+  );
+}
+
+/* ── Animated counter ── */
+function Counter({ target, suffix, label }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const duration = 1800;
+        const start = performance.now();
+        const tick = (now) => {
+          const p = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          setCount(Math.round(eased * target));
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [target]);
+
+  return (
+    <div className="stat-item" ref={ref}>
+      <span className="stat-number">{count}{suffix}</span>
+      <span className="stat-label">{label}</span>
+    </div>
+  );
+}
+
+/* ── Carousel items ── */
 const carouselItems = [
   { src: "rideo.png",        alt: "Rideo" },
   { src: "sicaruscreen.png", alt: "Sicarú" },
@@ -36,7 +111,7 @@ function Home() {
     );
 
     const els = document.querySelectorAll(
-      ".yomismo-flip, .intro, .description, .tech-card, .left-card, .right-card, .side-card, .cylinder-section"
+      ".yomismo-flip, .intro, .description, .stats-row, .tech-card, .side-card, .cylinder-section"
     );
     els.forEach((el) => observer.observe(el));
     return () => els.forEach((el) => observer.unobserve(el));
@@ -45,11 +120,7 @@ function Home() {
   return (
     <div className="home">
       <div className="welcome-cont">
-        <h1 className="welcome">
-          I´m Natanael
-          <br />
-          Welcome to my portfolio
-        </h1>
+        <TypewriterTitle />
       </div>
 
       <div className="yomismo-wrapper">
@@ -78,17 +149,20 @@ function Home() {
         </h4>
       </div>
 
+      {/* Contadores animados */}
+      <div className="stats-row">
+        <Counter target={4}  suffix=""  label="Projects" />
+        <Counter target={2}  suffix="+" label="Years coding" />
+        <Counter target={16} suffix="+" label="Technologies" />
+      </div>
+
       {/* 3D cylinder carousel */}
       <div className="cylinder-section">
         <p className="cylinder-label">Featured Projects</p>
         <div className="cylinder-stage">
           <div className="cylinder-track">
             {carouselItems.map((item, i) => (
-              <div
-                key={i}
-                className="cylinder-item"
-                style={{ "--i": i }}
-              >
+              <div key={i} className="cylinder-item" style={{ "--i": i }}>
                 <img src={`/images/${item.src}`} alt={item.alt} />
               </div>
             ))}
