@@ -64,8 +64,6 @@ function App() {
     <>
       <CustomCursor />
 
-      {/* Grain overlay */}
-      <div className="noise-overlay" aria-hidden="true" />
 
       {/* Aurora fondo */}
       <div className="bg-aurora" aria-hidden="true">

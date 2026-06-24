@@ -376,10 +376,15 @@
 }
 
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .skill-item {
@@ -388,8 +393,9 @@
   color: #c8ddf7;
   font-size: 0.82rem;
   font-weight: 500;
-  padding: 0.45rem 1rem;
+  padding: 0.45rem 0.5rem;
   border-radius: 999px;
+  text-align: center;
   transition: transform 0.2s ease, background 0.2s ease,
     box-shadow 0.2s ease, border-color 0.2s ease;
   cursor: default;
@@ -426,10 +432,15 @@
 }
 
 .tech-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .tech-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .tech-item {
@@ -438,8 +449,9 @@
   color: #c8ddf7;
   font-size: 0.82rem;
   font-weight: 500;
-  padding: 0.45rem 1rem;
+  padding: 0.45rem 0.5rem;
   border-radius: 999px;
+  text-align: center;
   transition: transform 0.2s ease, background 0.2s ease,
     box-shadow 0.2s ease, border-color 0.2s ease;
   cursor: default;
@@ -454,17 +466,6 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 600px) {
-  .tech-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-  }
-
-  .tech-item {
-    text-align: center;
-  }
-}
 
 /* ── 3D Cylinder Carousel ── */
 .cylinder-section {
