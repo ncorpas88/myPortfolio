@@ -90,12 +90,12 @@ const certifications = [
     bg: "rgba(66,133,244,0.1)",
     border: "rgba(66,133,244,0.35)",
     items: [
-      "Fundamentos de la ciberseguridad",
-      "Detección y respuesta",
-      "Activos, amenazas y vulnerabilidades",
-      "Linux y SQL",
-      "Redes y seguridad de redes",
-      "Gestión de riesgos de seguridad",
+      "Foundations of Cybersecurity",
+      "Detection and Response",
+      "Assets, Threats and Vulnerabilities",
+      "Tools of the Trade: Linux and SQL",
+      "Networks and Network Security",
+      "Manage Security Risks",
     ],
   },
   {
