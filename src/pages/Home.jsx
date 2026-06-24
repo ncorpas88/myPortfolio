@@ -99,15 +99,17 @@ function Home() {
 
       <div className="card-container">
         <div className="side-card">
-          <ul className="sps-game">
+          <div className="sps-game">
             <h3>Skills</h3>
-            <li>Autonomous learning</li>
-            <li>Analytical thinking</li>
-            <li>Initiative</li>
-            <li>Problem-solving</li>
-            <li>Effective communication</li>
-            <li>Teamwork</li>
-          </ul>
+            <div className="skills-grid">
+              <span className="skill-item">Autonomous learning</span>
+              <span className="skill-item">Analytical thinking</span>
+              <span className="skill-item">Initiative</span>
+              <span className="skill-item">Problem-solving</span>
+              <span className="skill-item">Effective communication</span>
+              <span className="skill-item">Teamwork</span>
+            </div>
+          </div>
         </div>
       </div>
 

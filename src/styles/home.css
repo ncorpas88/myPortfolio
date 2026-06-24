@@ -196,34 +196,43 @@
   padding: 1.5rem 1.75rem;
   text-align: center;
   backdrop-filter: blur(10px);
-  list-style: none;
-  /* reset browser ul defaults */
   margin: 0;
-  padding-left: 0;
 }
 
 .sps-game h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
   letter-spacing: 0.05em;
   color: #60b4ff;
-  padding: 0;
 }
 
-.sps-game li {
-  padding: 0.3rem 0;
-  margin: 0;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  list-style: none;
-  width: 100%;
-  text-align: center;
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
 }
 
-.sps-game li:last-child {
-  border-bottom: none;
+.skill-item {
+  background: rgba(0, 140, 255, 0.12);
+  border: 1px solid rgba(0, 140, 255, 0.3);
+  color: #c8ddf7;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease,
+    box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.skill-item:hover {
+  transform: translateY(-3px) scale(1.06);
+  background: rgba(0, 140, 255, 0.22);
+  border-color: rgba(0, 140, 255, 0.55);
+  box-shadow: 0 4px 14px rgba(0, 140, 255, 0.25);
+  color: #ffffff;
 }
 
 /* ── Tech card ── */
