@@ -36,14 +36,6 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 1.25rem;
   backdrop-filter: blur(10px);
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.stats-row.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .stat-item {
@@ -119,13 +111,14 @@
   aspect-ratio: 1 / 1;
   cursor: pointer;
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: translateY(44px);
+  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .yomismo-flip.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 .yomismo-inner {
@@ -192,21 +185,6 @@
   display: block;
 }
 
-/* ── Scroll-reveal (resto de elementos) ── */
-.intro,
-.description,
-.skills-tooling-row {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.intro.visible,
-.description.visible,
-.skills-tooling-row.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ── Intro heading ── */
 .intro {
@@ -236,14 +214,6 @@
 /* ── Certifications ── */
 .certs-section {
   margin: 0 0 2.5rem;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.certs-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .certs-title {
@@ -474,14 +444,6 @@
   align-items: center;
   gap: 0;
   margin: 3rem 0;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.cylinder-section.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .cylinder-label {
@@ -573,3 +535,74 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
+
+/* ══════════════════════════════════════
+   SISTEMA DE REVEAL DIRECCIONAL
+   Igual que Accenture: lateral + scale
+   ══════════════════════════════════════ */
+
+.reveal-left,
+.reveal-right,
+.reveal-up,
+.reveal-scale {
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-72px) translateY(18px);
+  transition:
+    opacity  0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(72px) translateY(18px);
+  transition:
+    opacity  0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(52px);
+  transition:
+    opacity  0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88) translateY(24px);
+  transition:
+    opacity  0.95s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-up.visible,
+.reveal-scale.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Retraso escalonado entre skills y tooling */
+.tech-card.reveal-right {
+  transition-delay: 0.18s;
+}
+
+/* ── Cert cards: aparecen en cascada cuando la sección es visible ── */
+.certs-section .cert-card {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.certs-section.visible .cert-card           { opacity: 1; transform: none; }
+.certs-section.visible .cert-card:nth-child(1) { transition-delay: 0.04s; }
+.certs-section.visible .cert-card:nth-child(2) { transition-delay: 0.14s; }
+.certs-section.visible .cert-card:nth-child(3) { transition-delay: 0.24s; }
+.certs-section.visible .cert-card:nth-child(4) { transition-delay: 0.34s; }
+.certs-section.visible .cert-card:nth-child(5) { transition-delay: 0.44s; }

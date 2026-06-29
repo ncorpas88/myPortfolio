@@ -161,7 +161,7 @@ function Home() {
     );
 
     const els = document.querySelectorAll(
-      ".yomismo-flip, .intro, .description, .stats-row, .skills-tooling-row, .cylinder-section, .certs-section"
+      ".yomismo-flip, .reveal-left, .reveal-right, .reveal-up, .reveal-scale"
     );
     els.forEach((el) => observer.observe(el));
     return () => els.forEach((el) => observer.unobserve(el));
@@ -186,11 +186,11 @@ function Home() {
         </div>
       </div>
 
-      <div className="intro">
+      <div className="intro reveal-left">
         <h2>Hi, I'm Natanael Corpas Rivero</h2>
       </div>
 
-      <div className="description">
+      <div className="description reveal-right">
         <h4>
           I'm a Full Stack Web Developer with experience in building dynamic,
           responsive applications using modern technologies. I also work as an
@@ -202,14 +202,14 @@ function Home() {
       </div>
 
       {/* Contadores animados */}
-      <div className="stats-row">
+      <div className="stats-row reveal-up">
         <Counter target={4}  suffix=""  label="Projects" />
         <Counter target={2}  suffix="+" label="Years coding" />
         <Counter target={20} suffix="+" label="Technologies" />
       </div>
 
       {/* 3D cylinder carousel */}
-      <div className="cylinder-section">
+      <div className="cylinder-section reveal-scale">
         <p className="cylinder-label">Featured Projects</p>
         <div className="cylinder-stage">
           <div className="cylinder-track">
@@ -224,7 +224,7 @@ function Home() {
       </div>
 
       {/* Certifications */}
-      <div className="certs-section">
+      <div className="certs-section reveal-up">
         <h3 className="certs-title">Certifications</h3>
         <div className="certs-grid">
           {certifications.map((group) => (
@@ -249,7 +249,7 @@ function Home() {
       </div>
 
       <div className="skills-tooling-row">
-        <div className="side-card">
+        <div className="side-card reveal-left">
           <div className="sps-game">
             <h3>Skills</h3>
             <div className="skills-grid">
@@ -269,7 +269,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="tech-card">
+        <div className="tech-card reveal-right">
           <h3 className="tech-title">Tooling</h3>
           <div className="tech-list">
             <span className="tech-item">HTML</span>
